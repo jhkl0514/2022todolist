@@ -1,15 +1,24 @@
-//app
-
 <template>
-  <div class="header">
-    <h1>ToDo List</h1>
-  </div>
-  <todo-input @addTodo="addTodoItem"></todo-input>
-  <todo-list :todoItem="todoItem" @reDel="removeDel"></todo-list>
-  <todo-footer @clearAll="clearAll"></todo-footer>
-            <!-- 에밋 신호를 받는다 -->
-  <!-- {{todoItem}} -->
-
+<div class="visual">
+        <div class="visualWrap">
+            <div class="hearder">
+                <div class="titleWrap">
+                    <h2>Todo List</h2>
+                    <p>할 일을 작성하세요!</p>
+                </div>
+                <div class="timg"><img src="./assets/title_img.png" alt=""></div>
+            </div>
+           
+              <todo-input @addTodo="addTodoItem"></todo-input>
+              
+              <todo-list :todoItem="todoItem" @reDel="removeDel"></todo-list>
+              <todo-footer @clearAll="clearAll"></todo-footer>
+              
+                        <!-- 에밋 신호를 받는다 -->
+              <!-- {{todoItem}} -->
+           
+        </div>
+</div>        
 </template>
 
 <script>
@@ -51,15 +60,50 @@ export default {
 </script>
 
 
-<style>
+<style lang="scss">
 @import url('./assets/reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+html{height: 100%;}
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif; height: 100%; 
+  display: flex; align-items: center; justify-content: center;
+  background-color: #eee;
 }
-#app{
-  width: 400px;
-  margin: 0 auto;
-  _background: skyblue;
+.visual{
+    width: 100%; height: 100%;
+  .visualWrap{
+    margin: 0 auto;
+    width: 360px;
+    height: 640px;
+    background: #032E53;
+    border-radius:20px; 
+    padding: 20px;
+    .hearder{
+      display: flex;
+      padding: 20px 10px;
+      .titleWrap{
+        color: #eee;
+        h2{
+          font-weight: 700;
+          font-size: 35px;
+          line-height: 40px;
+        }
+        p{
+          font-size: 14px;
+          line-height: 30px;
+          letter-spacing: -0.005em; 
+        }
+      }
+      .timg{
+        display: flex; align-items: flex-end;
+        padding-left: 10px;
+      }
+    }  
+  }
 }
+
+
+
+
+
 </style>

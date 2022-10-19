@@ -1,7 +1,10 @@
 <template>
- <div class="clearAll" @click="$emit('clearAll')">
-  <!-- //신호를 보낸다 -->
-  clearAll
+ <div class="clearWrap">
+   <div class="clearAll" @click="$emit('clearAll')">
+    <!-- //신호를 보낸다 -->
+    <i class="fa-solid fa-eraser"></i>&nbsp all
+   </div>
+  
  </div>
 </template>
 
@@ -11,13 +14,19 @@ export default {
 }
 </script>
 
-<style>
-  .clearAll{
-    display: flex;justify-content: center;align-items: center;
-    background: gray;
-    color:white;
-    height: 35px;
-    border-radius: 10px;
-    cursor: pointer;
+<style lang="scss">
+
+.clearWrap{
+    display: flex;
+    justify-content: center;
+    .clearAll{
+      display: flex;justify-content: center;align-items: center;
+      background: #000;    
+      color:rgb(255, 180, 42);   
+      border-radius: 20px;
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
   }
 </style>

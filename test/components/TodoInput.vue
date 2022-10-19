@@ -1,16 +1,16 @@
 <template>
-
 <div class="searchInput">
-        <input type="text" class="inp" placeholder="오늘의 할일을 입력하세요"
-        v-model="newTodoItem">
-        <div class="btn"  @click="totoItem"><img src="../assets/btn_add.png" alt=""></div>        
+    <input type="text" class="inp" placeholder="오늘의 할일을 입력하세요"
+    v-model="newTodoItem">
+    <div class="btn" @click="totoItem">할일</div>
+    
 </div>
 <!-- {{newTodoItem}} -->
 
 <transition name="mView">
     <Modal v-if="modalView" @click="modalView=false">
         <template v-slot:header>자료를 입력하세요.</template>
-        <template v-slot:body>자료를 정확하게 입력하세요</template>
+        <template v-slot:body>자료를 입력하세요.</template>
         <!-- slot을 통해서 자식에게 내용을 전송할 수 있다 -->
     </Modal>
 </transition>
@@ -48,38 +48,20 @@ export default {
 </script>
 
 <style lang="scss">
-
 .searchInput{
     display: flex;
-    align-items: center;
-    width: 320px; 
-    height: 50px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    margin-bottom: 15px;
     .inp{
-        // flex: 1 0 auto;
-        // text-indent: 10px;
-        width: 247px; height: 30px;
-        margin-left: 25px;
-        border: 0 none;
-        font-size: 12px;
+        flex: 1 0 auto;
+        text-indent: 10px;
     }
     .btn{
-        width: 40px;
-        height: 40px;
-        background: #032E53;
-        border-radius: 50px;
-        display: flex; justify-content: center; align-items: center; 
-        cursor: pointer;
-        // &:active{
-        // background: #fff;
+        line-height: 40px;
+        padding: 0 10px;
+        background: gray;
+        color: #fff;
+        cursor:pointer;
     }
 }
-
-
-.inpAdd .inp:value{font-size: 10px;}
 
 .mView-enter-from{opacity:0; transform: translateY(-100%);}
 .mView-enter-active{transition: 0.3s;}
